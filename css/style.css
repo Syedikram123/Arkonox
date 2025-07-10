@@ -69,3 +69,15 @@ input {
     user-select: none;
     -webkit-user-select: none;
 }
+
+#error {
+  color: #ff3333;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px red;
+  margin-top: 1rem;
+  background-color: rgba(0, 0, 0, 0.6); /* Soft black bg */
+  padding: 10px 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+}

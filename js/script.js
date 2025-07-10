@@ -18,22 +18,28 @@ btn.addEventListener('click', () => {
   const codeInput = document.getElementById('knightCode').value;
   const error = document.getElementById('error');
 
+  // Reset error message display
+  error.style.display = "none";
+
   if (!nameInput || !codeInput) {
     error.innerText = "❌ Please enter both Knight Name and Code";
+    error.style.display = "block";
     return;
   }
 
   if (!allowedKnights[nameInput]) {
     error.innerText = "❌ Knight not found";
+    error.style.display = "block";
     return;
   }
 
   if (allowedKnights[nameInput] !== codeInput) {
     error.innerText = "❌ Wrong code for this Knight";
+    error.style.display = "block";
     return;
   }
 
-  // ✅ All good → proceed
+  // ✅ Success
   localStorage.setItem('knightName', nameInput);
   localStorage.setItem('knightCode', codeInput);
   clickSound.play();
@@ -41,6 +47,7 @@ btn.addEventListener('click', () => {
     window.location.href = "dashboard.html";
   }, 500);
 });
+
 
 // 2. Enable video sound on any click
 document.body.addEventListener("click", () => {

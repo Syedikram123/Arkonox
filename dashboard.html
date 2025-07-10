@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Knight Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      background-color: #000;
+      color: #0ff;
+      font-family: 'Poppins', sans-serif;
+      padding: 2rem;
+    }
+    h1, h2 {
+      text-align: center;
+      text-shadow: 0 0 10px #0ff;
+    }
+    .task-section, .memory-section {
+      max-width: 600px;
+      margin: 2rem auto;
+      background-color: rgba(255,255,255,0.05);
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+    }
+    label {
+      display: block;
+      margin-bottom: 0.7rem;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.4);
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 0.7rem;
+      border-radius: 10px;
+      border: none;
+      resize: none;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #0ff;
+      color: black;
+      font-weight: bold;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+    #logout {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button id="logout">Logout</button>
+  <h1>🛡️ Welcome, Knight</h1>
+  <h2>🌕 Moon <span id="moonNum">1</span> | 📆 Day <span id="dayNum">1</span></h2>
+
+  <div class="task-section">
+    <h2>✅ Daily Tasks</h2>
+    <label><input type="checkbox" id="islamicTask"> Islamic Task</label>
+    <label><input type="checkbox" id="physicalTask"> Physical Task</label>
+    <label><input type="checkbox" id="mentalTask"> Mental Task</label>
+    <label><input type="checkbox" id="financialTask"> Financial Task</label>
+  </div>
+
+  <div class="memory-section">
+    <h2>📝 Best Memory Today</h2>
+    <textarea id="memoryInput" placeholder="Write your best moment of the day..."></textarea>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

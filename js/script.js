@@ -4,6 +4,15 @@ const video = document.getElementById('bg-video');
 const title = document.getElementById("pageTitle");
 let pressTimer;
 
+const allowedKnights = {
+  apexion: "175025",
+  velox: "2275025",
+  luminari: "1275025",
+  kairos: "1175025",
+  spectra: "1975025"
+};
+
+
 // 1. Enter button click logic
 btn.addEventListener('click', () => {
   const name = document.getElementById('knightName').value;

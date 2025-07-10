@@ -26,7 +26,6 @@ btn.addEventListener('click', () => {
     error.style.display = "block";
     return;
   }
-
   if (!allowedKnights[nameInput]) {
     error.innerText = "❌ Knight not found";
     error.style.display = "block";
@@ -47,8 +46,6 @@ btn.addEventListener('click', () => {
     window.location.href = "dashboard.html";
   }, 500);
 });
-
-
 // 2. Enable video sound on any click
 document.body.addEventListener("click", () => {
   video.muted = false;

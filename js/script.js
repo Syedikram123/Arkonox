@@ -13,21 +13,33 @@ const allowedKnights = {
 };
 
 
-// 1. Enter button click logic
 btn.addEventListener('click', () => {
-  const name = document.getElementById('knightName').value;
-  const code = document.getElementById('knightCode').value;
+  const nameInput = document.getElementById('knightName').value.toLowerCase();
+  const codeInput = document.getElementById('knightCode').value;
+  const error = document.getElementById('error');
 
-  if (name && code) {
-    localStorage.setItem('knightName', name);
-    localStorage.setItem('knightCode', code);
-    clickSound.play();
-    setTimeout(() => {
-      window.location.href = "dashboard.html"; // Next page
-    }, 500); // Delay to allow sound
-  } else {
-    alert("Enter both Knight Name and Code.");
+  if (!nameInput || !codeInput) {
+    error.innerText = "❌ Please enter both Knight Name and Code";
+    return;
   }
+
+  if (!allowedKnights[nameInput]) {
+    error.innerText = "❌ Knight not found";
+    return;
+  }
+
+  if (allowedKnights[nameInput] !== codeInput) {
+    error.innerText = "❌ Wrong code for this Knight";
+    return;
+  }
+
+  // ✅ All good → proceed
+  localStorage.setItem('knightName', nameInput);
+  localStorage.setItem('knightCode', codeInput);
+  clickSound.play();
+  setTimeout(() => {
+    window.location.href = "dashboard.html";
+  }, 500);
 });
 
 // 2. Enable video sound on any click

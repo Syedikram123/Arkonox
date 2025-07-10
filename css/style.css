@@ -49,22 +49,25 @@ input {
 }
 
 #enterBtn {
-  margin-top: 2vh;
-  padding: 1.5vh 2vw;
-  font-size: 1.2rem;
-  background: #0ff;
-  color: black;
+  font-size: 1.5rem;
+  padding: 1.2rem 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: #0ff;
+  color: #000;
   border: none;
-  border-radius: 8px;
-  box-shadow: 0 0 20px #0ff;
-  transition: 0.3s;
+  border-radius: 15px;
   cursor: pointer;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
+  transition: all 0.3s ease;
 }
 
 #enterBtn:hover {
-  box-shadow: 0 0 40px #0ff;
-  transform: scale(1.05);
+  transform: scale(1.07);
+  box-shadow: 0 0 30px #0ff, 0 0 50px #0ff inset;
 }
+
 #pageTitle {
     user-select: none;
     -webkit-user-select: none;
